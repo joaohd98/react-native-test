@@ -1,13 +1,14 @@
 import React from 'react';
-import {View, Text, StatusBar} from 'react-native';
+import {View, StatusBar, SafeAreaView} from 'react-native';
+import {CounterNumberScreen,} from '../screens/count-number';
 
 export const Layout = () => (
   <>
     <StatusBar barStyle="dark-content" />
     <View>
-      <Text>
-        ABC
-      </Text>
+      <SafeAreaView>
+        <CounterNumberScreen/>
+      </SafeAreaView>
     </View>
   </>
 );
