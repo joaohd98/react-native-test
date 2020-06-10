@@ -11,7 +11,8 @@
   "dependencies": {
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-native": "0.63.0-rc.1"
+    "react-native": "0.63.0-rc.1",
+    "styled-components": "5.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -20,6 +21,7 @@
     "@types/jest": "^24.0.24",
     "@types/react-native": "^0.62.0",
     "@types/react-test-renderer": "16.9.2",
+    "@types/styled-components": "5.1.0",
     "babel-jest": "^25.1.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",

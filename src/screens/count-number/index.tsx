@@ -1,15 +1,34 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {CounterNumberScreenStyles} from './styles';
 
-export class CounterNumberScreen extends React.PureComponent {
+interface State {
+  counter?: number;
+}
+
+
+export class CounterNumberScreen extends React.Component<State> {
+  state = {
+    counter: 0
+  };
+
+  addValue = () => {
+    this.setState({counter: this.state.counter + 1})
+  }
 
   render() {
+    const {View, TextNumber, TouchableOpacityButton, TextTouchableOpacity} = CounterNumberScreenStyles;
+
     return (
-      <>
-        <Text>AAAA</Text>
-        <Text>BBBB</Text>
-        <Text>CCCC</Text>
-      </>
+      <View>
+        <TextNumber>Meu valor: {this.state.counter}</TextNumber>
+        <TouchableOpacityButton onPress={this.addValue}>
+          <TextTouchableOpacity>
+            ADD
+          </TextTouchableOpacity>
+        </TouchableOpacityButton>
+      </View>
     );
+
   }
+
 }
