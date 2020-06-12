@@ -3,8 +3,8 @@ import React from 'react';
 
 import {shallow} from 'enzyme';
 import {GuessWordScreenCongrats, GuessWordScreenCongratsProps} from './index';
-import {findByComponent} from '../../../../helpers/test-helpers';
 import {GuessWordScreenCongratsStyles} from './styles';
+import {findByComponent} from '../../../../helpers/test/';
 
 const {View, Text} = GuessWordScreenCongratsStyles;
 

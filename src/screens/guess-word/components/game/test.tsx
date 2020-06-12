@@ -2,9 +2,9 @@ import 'react-native';
 import React from 'react';
 
 import {shallow, ShallowWrapper} from 'enzyme';
-import {findByComponent} from '../../../../helpers/test-helpers';
 import {GuessWordScreenGame, GuessWordScreenGameProps} from './index';
 import {GuessWordScreenGameStyles} from './styles';
+import {findByComponent} from '../../../../helpers/test/';
 
 const {Container, TextInstructions, ViewGuessedContainer, ViewGuessed, TextGuessed} = GuessWordScreenGameStyles;
 

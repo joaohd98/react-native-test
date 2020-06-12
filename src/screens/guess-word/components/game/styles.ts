@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {TextProps, ViewProps} from 'react-native';
+import {Animated, TextProps, ViewProps} from 'react-native';
 
 export const GuessWordScreenGameStyles = {
   Container: styled.View<ViewProps>`
@@ -13,6 +13,10 @@ export const GuessWordScreenGameStyles = {
     display: flex;
     flex-direction: row;
   `,
+  ViewTitleGuessed: styled.View<ViewProps>`
+    display: flex;
+    flex-direction: row;
+  `,
   TextTitleGuessed: styled.Text<TextProps>`
     font-size: 18px;
     width: 50%;
@@ -22,8 +26,15 @@ export const GuessWordScreenGameStyles = {
   TextGuessed: styled.Text<TextProps & {isTitle?: boolean}>`
     width: 50%;
     padding: 20px 15px;
-    color: ${({isTitle}) => isTitle ? "#888888" : "#000"};
-    background-color: ${({isTitle}) => isTitle ? "#FFF" : "#F8F8F8"};
-    font-weight: ${({isTitle}) => isTitle ? "bold" : '500'};
+    color: #000;
+    background-color: #F8F8F8;
+    font-weight: 500;
   `,
+  TitleGuessed: styled.Text<TextProps>`
+    width: 50%;
+    padding: 20px 15px;
+    color: #888888;
+    background-color:  #FFF;
+    font-weight: bold;
+  `
 }

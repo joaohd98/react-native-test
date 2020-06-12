@@ -9,18 +9,18 @@ export class GuessWordScreenGame extends React.Component<GuessWordScreenGameProp
 
   renderGuesses = () => {
     const {guessedWords} = this.props;
-    const {ViewGuessedContainer, ViewGuessed, TextGuessed} = GuessWordScreenGameStyles;
+    const {ViewGuessedContainer, ViewGuessed, ViewTitleGuessed, TitleGuessed, TextGuessed} = GuessWordScreenGameStyles;
 
     return (
       <ViewGuessedContainer>
-        <ViewGuessed>
-          <TextGuessed isTitle={true}>
+        <ViewTitleGuessed>
+          <TitleGuessed>
             Guess
-          </TextGuessed>
-          <TextGuessed isTitle={true}>
+          </TitleGuessed>
+          <TitleGuessed>
             Matching Letters
-          </TextGuessed>
-        </ViewGuessed>
+          </TitleGuessed>
+        </ViewTitleGuessed>
         {
           guessedWords?.map((guessed, index) => {
             return (
