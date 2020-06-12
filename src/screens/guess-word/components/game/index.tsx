@@ -13,6 +13,14 @@ export class GuessWordScreenGame extends React.Component<GuessWordScreenGameProp
 
     return (
       <ViewGuessedContainer>
+        <ViewGuessed>
+          <TextGuessed isTitle={true}>
+            Guess
+          </TextGuessed>
+          <TextGuessed isTitle={true}>
+            Matching Letters
+          </TextGuessed>
+        </ViewGuessed>
         {
           guessedWords?.map((guessed, index) => {
             return (
