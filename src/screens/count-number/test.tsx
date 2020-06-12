@@ -3,8 +3,8 @@ import React from 'react';
 
 import renderer from 'react-test-renderer';
 import {shallow, ShallowWrapper} from 'enzyme';
-import {CounterNumberScreen} from '../../../src/screens/count-number';
-import {CounterNumberScreenStyles} from '../../../src/screens/count-number/styles';
+import {CounterNumberScreen} from './index';
+import {CounterNumberScreenStyles} from './styles';
 
 const {View, TextNumber, TextError, AddButton, DecreaseButton} = CounterNumberScreenStyles;
 
@@ -14,7 +14,7 @@ const {View, TextNumber, TextError, AddButton, DecreaseButton} = CounterNumberSc
  * @param {object} props - Component props specific for this setup
  * @param {any} state - Initial State setup
  * @return {ShallowWrapper}
-*/
+ */
 const setup = (props: object = {}, state: any = null): ShallowWrapper => {
   const wrapper = shallow(<CounterNumberScreen {...props} />)
 
@@ -31,7 +31,7 @@ const setup = (props: object = {}, state: any = null): ShallowWrapper => {
  * @param {ShallowWrapper} wrapper - Where will happen the search
  * @param {Element} component - The component that we want to find
  * @return {ShallowWrapper}
-*/
+ */
 const findByComponent = (wrapper: ShallowWrapper, component: Element): ShallowWrapper => {
   return wrapper.find(component);
 }
