@@ -8,8 +8,13 @@ import {GuessWordScreenCongratsStyles} from './styles';
 
 const {View, Text} = GuessWordScreenCongratsStyles;
 
+const defaultProps: GuessWordScreenCongratsProps = {
+  success: false,
+}
+
 const setup = (props: GuessWordScreenCongratsProps  = {}) => {
-  return shallow(<GuessWordScreenCongrats {...props} />)
+  const setupProps = {...defaultProps, ...props};
+  return shallow(<GuessWordScreenCongrats {...setupProps} />)
 }
 
 test("render without error", () => {
