@@ -7,17 +7,9 @@ import {GuessWordScreenInputProps} from './model';
 class Input extends React.Component<GuessWordScreenInputProps> {
 
   renderHasGuessedWord = () => {
-    const {ViewInput, InputBox, TouchableOpacitySend, TouchableOpacityText} = GuessWordScreenInputStyles;
-
+    const {ViewInput} = GuessWordScreenInputStyles;
     return (
-      <ViewInput>
-        <InputBox />
-        <TouchableOpacitySend>
-          <TouchableOpacityText>
-            MARIO
-          </TouchableOpacityText>
-        </TouchableOpacitySend>
-      </ViewInput>
+      <ViewInput />
     );
   }
 
