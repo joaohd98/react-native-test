@@ -9,15 +9,13 @@ export class GuessWordScreen extends React.PureComponent {
 
     return (
       <ViewContainer>
-        <TextTitle>
-          Jotto
-        </TextTitle>
+        <TextTitle>Jotto</TextTitle>
         <GuessWordScreenCongrats success={true} />
         <GuessWordScreenGame guessedWords={[
           {guessedWord: "Mario", letterMatcherCount: 3},
           {guessedWord: "Luigi", letterMatcherCount: 3},
           {guessedWord: "Peach", letterMatcherCount: 3},
-          ]} />
+        ]}/>
       </ViewContainer>
     )
   }
