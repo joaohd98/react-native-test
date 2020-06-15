@@ -2,8 +2,9 @@ import React from 'react';
 import {GuessWordScreenCongrats} from './components/congrats';
 import {GuessWordScreenGame} from './components/game';
 import {GuessWordScreenStyles} from './styles';
+import {GuessWordScreenProps} from './model';
 
-export class GuessWordScreen extends React.PureComponent {
+export class GuessWordScreen extends React.Component<GuessWordScreenProps> {
   render() {
     const {ViewContainer, TextTitle} = GuessWordScreenStyles;
 

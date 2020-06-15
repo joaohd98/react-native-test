@@ -1,16 +1,51 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Store} from 'redux';
+import {GuessWordScreenInputStyles} from './styles';
+import {ReduxGlobal} from '../../../../redux/reducers';
+import {GuessWordScreenInputProps} from './model';
 
-class Input extends React.Component<{store: Store}> {
+class Input extends React.Component<GuessWordScreenInputProps> {
+
+  renderHasGuessedWord = () => {
+    const {ViewInput, InputBox, TouchableOpacitySend, TouchableOpacityText} = GuessWordScreenInputStyles;
+
+    return (
+      <ViewInput>
+        <InputBox />
+        <TouchableOpacitySend>
+          <TouchableOpacityText>
+            MARIO
+          </TouchableOpacityText>
+        </TouchableOpacitySend>
+      </ViewInput>
+    );
+  }
+
+  renderHasNotGuessedWord = () => {
+    const {ViewInput, InputBox, TouchableOpacitySend, TouchableOpacityText} = GuessWordScreenInputStyles;
+
+    return (
+      <ViewInput>
+        <InputBox />
+        <TouchableOpacitySend>
+          <TouchableOpacityText>
+            MARIO
+          </TouchableOpacityText>
+        </TouchableOpacitySend>
+      </ViewInput>
+    );
+  }
+
   render() {
-    return <></>;
+    return this.props.isCorrect ? this.renderHasNotGuessedWord() : this.renderHasGuessedWord();
   }
 }
 
 
-const mapStateToProps = (state: any) => {
-  return {};
+const mapStateToProps = (props: ReduxGlobal): GuessWordScreenInputProps  => {
+  return {
+    ...props.guessWordScreenReducer
+  };
 }
 
 
