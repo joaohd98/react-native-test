@@ -29,6 +29,13 @@ export const GuessWordScreenReducer = (state = GuessWordScreenInitialState, acti
       }
     }
 
+    case GuessWordScreenAction.SET_SECRET_WORD: {
+      return {
+        ...state,
+        secretWord: action.secretWord[0],
+      }
+    }
+
     default: {
       return state;
     }
