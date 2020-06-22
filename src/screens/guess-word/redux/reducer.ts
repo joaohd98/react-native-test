@@ -1,7 +1,10 @@
 import {GuessWordScreenAction} from './action';
+import {GuessWordScreenProps} from '../model';
 
-export const GuessWordScreenInitialState = {
+export const GuessWordScreenInitialState: GuessWordScreenProps = {
   isCorrect: false,
+  secretWord: "",
+  guessedWords: [],
 }
 
 export const GuessWordScreenReducer = (state = GuessWordScreenInitialState, action: any = {}) => {
@@ -10,7 +13,19 @@ export const GuessWordScreenReducer = (state = GuessWordScreenInitialState, acti
 
     case GuessWordScreenAction.CORRECT_GUESS: {
       return {
+        ...state,
         isCorrect: true,
+      }
+    }
+
+    case GuessWordScreenAction.INCORRECT_GUESS: {
+      return {
+        ...state,
+        isCorrect: false,
+        guessedWords: [
+          ...state.guessedWords!,
+          action.guessedWords
+        ]
       }
     }
 

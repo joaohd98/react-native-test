@@ -1,3 +1,5 @@
 export interface GuessWordScreenProps {
-  isCorrect: boolean;
+  isCorrect?: boolean;
+  secretWord?: string;
+  guessedWords?: {guessedWord: string, letterMatcherCount: number}[];
 }

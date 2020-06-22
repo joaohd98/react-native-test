@@ -4,12 +4,12 @@ import {GuessWordScreenInput} from './index';
 import {storeFactory} from '../../../../helpers/test/';
 import {GuessWordScreenInputStyles} from './styles';
 import {ReduxGlobal} from '../../../../redux/reducers';
-import {Provider} from 'react-redux';
 
 const {ViewInput, InputBox, TouchableOpacitySend} = GuessWordScreenInputStyles;
 
 const setup = (initialState: ReduxGlobal) => {
   const store = storeFactory(initialState);
+  // @ts-ignore
   return shallow(<GuessWordScreenInput store={store}/>).dive().dive();
 }
 
@@ -19,7 +19,6 @@ describe("render", () => {
 
     beforeEach(() => {
       wrapper = setup({guessWordScreenReducer: {isCorrect: true}});
-      console.log(wrapper.debug());
     });
 
     test("render component without error", () => {
@@ -41,7 +40,6 @@ describe("render", () => {
 
     beforeEach(() => {
       wrapper = setup({guessWordScreenReducer: {isCorrect: false}});
-      console.log(wrapper.debug());
     });
 
     test("render component without error", () => {
