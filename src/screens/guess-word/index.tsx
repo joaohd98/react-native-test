@@ -3,21 +3,31 @@ import {GuessWordScreenCongrats} from './components/congrats';
 import {GuessWordScreenGame} from './components/game';
 import {GuessWordScreenStyles} from './styles';
 import {GuessWordScreenProps} from './model';
+import {ReduxGlobal} from '../../redux/reducers';
+import {connect} from 'react-redux';
+import {getSecretWord} from './redux/action';
+import {GuessWordScreenInput} from './components/input';
 
-export class GuessWordScreen extends React.Component<GuessWordScreenProps> {
+class GuessWord extends React.Component<GuessWordScreenProps> {
   render() {
     const {ViewContainer, TextTitle} = GuessWordScreenStyles;
 
     return (
       <ViewContainer>
         <TextTitle>Jotto</TextTitle>
-        <GuessWordScreenCongrats success={true} />
-        <GuessWordScreenGame guessedWords={[
-          {guessedWord: "Mario", letterMatcherCount: 3},
-          {guessedWord: "Luigi", letterMatcherCount: 3},
-          {guessedWord: "Peach", letterMatcherCount: 3},
-        ]}/>
+        <GuessWordScreenCongrats success={this.props.isCorrect} />
+        <GuessWordScreenInput />
+        <GuessWordScreenGame guessedWords={this.props.guessedWords}/>
       </ViewContainer>
     )
   }
 }
+
+
+const mapStateToProps = (props: ReduxGlobal): GuessWordScreenProps  => {
+  return props.guessWordScreenReducer!;
+};
+
+
+export const GuessWordScreen = connect(mapStateToProps, {getSecretWord})(GuessWord);
+

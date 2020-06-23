@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {GuessWordScreenInputStyles} from './styles';
 import {ReduxGlobal} from '../../../../redux/reducers';
 import {GuessWordScreenInputProps} from './model';
+import {guessWord} from '../../redux/action';
 
 class Input extends React.Component<GuessWordScreenInputProps> {
 
@@ -41,5 +42,5 @@ const mapStateToProps = (props: ReduxGlobal): GuessWordScreenInputProps  => {
 }
 
 
-export const GuessWordScreenInput = connect(mapStateToProps)(Input);
+export const GuessWordScreenInput = connect(mapStateToProps, {guessWord})(Input);
 

@@ -57,6 +57,21 @@ describe("render", () => {
   });
 })
 
-describe("update state", () => {
+describe("redux props", () => {
+  test("has success piece of state as prop", () => {
+    const isCorrect = true;
+    const wrapper = setup({guessWordScreenReducer: {isCorrect}});
+    // @ts-ignore
+    const isCorrectProp = wrapper.instance().props.isCorrect;
 
+    expect(isCorrectProp).toBe(isCorrect);
+  });
+
+  test("'guessWord' action creator is a function prop", () => {
+    const wrapper = setup({});
+    // @ts-ignore
+    const guessWord = wrapper.instance().props.guessWord;
+
+    expect(guessWord).toBeInstanceOf(Function);
+  });
 })
