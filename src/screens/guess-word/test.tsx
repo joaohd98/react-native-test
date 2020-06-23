@@ -3,7 +3,9 @@ import {storeFactory} from '../../helpers/test/';
 import {shallow} from 'enzyme';
 import {GuessWordScreenInput} from './components/input';
 import React from 'react';
-import {GuessWordScreen} from './index';
+import {GuessWordScreen, UnconnectedGuessWord} from './index';
+import {GuessWordScreenInitialState} from './redux/reducer';
+import {GuessWordScreenProps} from './model';
 
 const setup = (initialState: ReduxGlobal) => {
   const store = storeFactory(initialState);
@@ -73,3 +75,18 @@ describe("redux props", () => {
   });
 
 })
+
+test("'getSecretWord' run on screen mount", () => {
+  const getSecretWord = jest.fn();
+
+  const props: GuessWordScreenProps = {
+    ...GuessWordScreenInitialState,
+    getSecretWord,
+  }
+
+  const wrapper = shallow(<UnconnectedGuessWord {...props} />)!;
+
+  wrapper.instance().componentDidMount?.();
+
+  expect(getSecretWord.mock.calls.length).toBe(1);
+});

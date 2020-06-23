@@ -8,7 +8,11 @@ import {connect} from 'react-redux';
 import {getSecretWord} from './redux/action';
 import {GuessWordScreenInput} from './components/input';
 
-class GuessWord extends React.Component<GuessWordScreenProps> {
+export class UnconnectedGuessWord extends React.Component<GuessWordScreenProps> {
+  componentDidMount() {
+    this.props.getSecretWord?.();
+  }
+
   render() {
     const {ViewContainer, TextTitle} = GuessWordScreenStyles;
 
@@ -29,5 +33,5 @@ const mapStateToProps = (props: ReduxGlobal): GuessWordScreenProps  => {
 };
 
 
-export const GuessWordScreen = connect(mapStateToProps, {getSecretWord})(GuessWord);
+export const GuessWordScreen = connect(mapStateToProps, {getSecretWord})(UnconnectedGuessWord);
 
